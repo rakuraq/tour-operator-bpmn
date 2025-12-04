@@ -1,13 +1,59 @@
 # BPMN-схемы для туроператора
 
 ## 1. Бронирование тура
-![Бронирование тура](https://mermaid.ink/img/pako:eNpNkU1PwzAMhv9KlFMnNtBUCQmJC4cJDkis0sEhTdO1q5KPKoWJ_76khQ2dLMvP63fynERZhQrBGqgQOacIWyYstcQH5iTKKlS4R6ibUOGGCd-txGvmJMoqVFggVKdV8MyEe2uJx8xJlFWosEDYOm0hM-GOCb-VxBvmJMoqVFgg1E6n4JkJX63EV-YkyipUWCBsnE7BExNumfBDSbxnTqKsQoV7hI3TFniyEp-ZkyirUOEeYetsCp6Y8MVKfGFOoqxChXuEjVUpeGTCrZX4ypxEWYUK9wgbq1PwyIRPVuIbcxJlFSrcI2ysSsEjE66txHfmJMoqVFggbKxOwSMTPlqJH8xJlFWocI-wcToFj0y4shLXzEmUVahwj7CxKgWPTLi0EjfMSZRVqLBAmJ0eQcP77fQJGt5vp0_Q8H47fYKG99vpEzS8306foOH9dvoEDe-30ydoeL-dPkHD--30CRreb6dP0PB-O32Chvfb6RM0vN9On6Dh_Xb6BA3vt9MnaHi_nT5Bw_vt9Aka3m-nT9Dwfjt9gob32-kTNLzfTp-g4f12-gQN77fTJ2h4v50-QcP77fQJGt5vp0_Q8H47fYKG99vpEzS8306foOH9dvoEDe-30ydoeL-dPkHD--30CRreb6dP0PB-O32Chvfb6RM0vN9On6Dh_Xb6BA3vt9MnaHi_nT5Bw_vt9Aka3m-nT9Dwfjt9gob32-kTNLzfTp-g4f12-gQN77fTJ2h4v50-QcP77fQJGt5vp0_Q8H47fYKG99vpEzS8306foOH9dvoEDe-30ydoeL-dPkHD--30CRreb6dP0PB-O32Chvfb6RM0vN9On6Dh_Xb6BA3vt9MnaHi_nT5Bw_vt9Mk_UE5PTA?type=png)
+```mermaid
+flowchart TD
+    A[Клиент ищет тур] --> B{Нашёлся?}
+    B -->|Нет| C[Завершить]
+    B -->|Да| D[Заполнить заявку]
+    D --> E[Оплатить]
+    E --> F{Оплата прошла?}
+    F -->|Нет| C
+    F -->|Да| G[Подтвердить у оператора]
+    G --> H[Выписать документы]
+    H --> I[Тур забронирован]
+```
 
 ## 2. Бронирование отеля
-![Бронирование отеля](https://mermaid.ink/img/pako:eNptklFLwzAQx79KmHMnNtC0CQmJC4cJDkis0sEhTdO1q5KPKs3E776kZYOdDtl9_3n93l1yoKRChaANVAicUoQNE5aa8IE5iZIKFe4R6l2o8JYJ361EL3MSJRUqLBCqZhU8MGHNhO9K4j1zEiUVKiwQqqZV8MCEGyZ8VRKfmJMoqVBhgbBuWgXPTPisJD4xJ1FSocICYdW0Cp6Z8ElJ9MxJlFSosEBYNZ2CFyZ8VBK9zEmUVKiwQFg1nYIXJnxQEh-ZkyipUGGBsGo6BS9M6JXEJ-YkSipUWCCsmk7BCxPeKYnPzEmUVKiwQFg1nYIXJrxVEr3MSZRUqLBAWDWtgmcmvFESvcxJlFSosEBYNa2CZyZcKYkfzEmUVKiwQJidHkHD--30CRreb6dP0PB-O32Chvfb6RM0vN9On6Dh_Xb6BA3vt9MnaHi_nT5Bw_vt9Aka3m-nT9Dwfjt9gob32-kTNLzfTp-g4f12-gQN77fTJ2h4v50-QcP77fQJGt5vp0_Q8H47fYKG99vpEzS8306foOH9dvoEDe-30ydoeL-dPkHD--30CRreb6dP0PB-O32Chvfb6RM0vN9On6Dh_Xb6BA3vt9MnaHi_nT5Bw_vt9Aka3m-nT9Dwfjt9gob32-kTNLzfTp-g4f12-gQN77fTJ2h4v50-QcP77fQJGt5vp0_Q8H47fYKG99vpEzS8306foOH9dvoEDe-30ydoeL-dPkHD--30CRreb6dP0PB-O32Chvfb6RM0vN9On6Dh_Xb6BA3vt9MnaHi_nT5Bw_vt9Mk_UFFQRA?type=png)
+```mermaid
+flowchart TD
+    A[Поиск отеля] --> B{Есть номера?}
+    B -->|Нет| C[Завершить]
+    B -->|Да| D[Заблокировать номер]
+    D --> E{Блокировка прошла?}
+    E -->|Нет| C
+    E -->|Да| F[Оформить бронь]
+    F --> G[Отправить подтверждение]
+    G --> H[Бронь оформлена]
+```
 
 ## 3. Покупка билетов
-![Покупка билетов](https://mermaid.ink/img/pako:eNptklFLwzAQx79KmHMnNtC0CQmJC4cJDkis0sEhTdO1q5KPKs3E776kZYOdDtl9_3n93l1yoKRChaANVAicUoQNE5aa8IE5iZIKFe4R6l2o8JYJ361EL3MSJRUqLBCqZhU8MGHNhO9K4j1zEiUVKiwQqqZV8MCEGyZ8VRKfmJMoqVBhgbBuWgXPTPisJD4xJ1FSocICYdW0Cp6Z8ElJ9MxJlFSosEBYNZ2CFyZ8VBK9zEmUVKiwQFg1nYIXJnxQEh-ZkyipUGGBsGo6BS9M6JXEJ-YkSipUWCCsmk7BCxPeKYnPzEmUVKiwQFg1nYIXJrxVEr3MSZRUqLBAWDWtgmcmvFESvcxJlFSosEBYNa2CZyZcKYkfzEmUVKiwQJidHkHD--30CRreb6dP0PB-O32Chvfb6RM0vN9On6Dh_Xb6BA3vt9MnaHi_nT5Bw_vt9Aka3m-nT9Dwfjt9gob32-kTNLzfTp-g4f12-gQN77fTJ2h4v50-QcP77fQJGt5vp0_Q8H47fYKG99vpEzS8306foOH9dvoEDe-30ydoeL-dPkHD--30CRreb6dP0PB-O32Chvfb6RM0vN9On6Dh_Xb6BA3vt9MnaHi_nT5Bw_vt9Aka3m-nT9Dwfjt9gob32-kTNLzfTp9gB1RTVT8?type=png)
+```mermaid
+flowchart TD
+    A[Поиск рейсов] --> B{Найдены?}
+    B -->|Нет| C[Завершить]
+    B -->|Да| D[Выбрать рейс]
+    D --> E[Ввести данные пассажира]
+    E --> F[Оплатить]
+    F --> G{Оплата прошла?}
+    G -->|Нет| C
+    G -->|Да| H[Выписать билет]
+    H --> I[Билет куплен]
+```
 
 ## 4. Поддержка клиентов
-![Поддержка клиентов](https://mermaid.ink/img/pako:eNptkltLw0AQgP9KmHMnNtC0CQmJC4cJDkis0sEhTdO1q5KPKk3Ff9-Slg12OmR3v-_bmdkEFUoqVAjaQIXAKUXYMGGpCR-YkyipUOEeoW5ChXdM-GElepmTKKlQYYFQNauCCRMmJvxUEh-ZkyipUGGBUDWdgokJN0z4piQ-MydRUqHCAqFqOgUTE66Z8FVJfGZOoqRChQXCqukUvDDhk5L4wpxESYUKC4RV0yl4YcInJdHLnERJhQoLhFXTKXhhQq8kPjMnUVKhwgJh1XQKXpjwTkl8Zk6ipEKFhT8Um07BCxPeKole5iRKKlRYIKyazh8mTLhUEl-YkyipUGGBsGo6f5gw4VJJfGVOoqRChQXCqmkVPDPhSkn8YE6ipEKFhT_UTo-g4f12-gQN77fTJ2h4v50-QcP77fQJGt5vp0_Q8H47fYKG99vpEzS8306foOH9dvoEDe-30ydoeL-dPkHD--30CRreb6dP0PB-O32Chvfb6RM0vN9On6Dh_Xb6BA3vt9MnaHi_nT5Bw_vt9Aka3m-nT9Dwfjt9gob32-kTNLzfTp-g4f12-gQN77fTJ2h4v50-QcP77fQJGt5vp0_Q8H47fYKG99vpEzS8306foOH9dvoEDe-30ydoeL-dPkHD--30CRreb6dP0PB-O32Chvfb6RM0vN9On6Dh_Xb6BA3vt9MnaHi_nT5Bw_vt9Mk_yUtRwQ?type=png)
+```mermaid
+flowchart TD
+    A[Поступило обращение] --> B[Записать в CRM]
+    B --> C{Тип обращения?}
+    C -->|Вопрос| D[Найти информацию]
+    C -->|Изменение| E[Изменить бронь]
+    C -->|Жалоба| F[Передать менеджеру]
+    D --> G[Ответить клиенту]
+    E --> G
+    F --> G
+    G --> H{Клиент доволен?}
+    H -->|Нет| I[Повторить обработку]
+    I --> G
+    H -->|Да| J[Закрыть обращение]
+```
